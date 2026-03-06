@@ -12,6 +12,8 @@
             --accent-color: #4a90e2;
             --text-color: #e0e0e0;
             --sub-text: #b0b0b0;
+            --discord-color: #5865F2;
+            --x-color: #1DA1F2;
         }
 
         body {
@@ -76,6 +78,38 @@
             color: inherit;
         }
 
+        /* コミュニティリスト用のスタイル */
+        .sns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .sns-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 10px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: background 0.2s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .sns-button:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .sns-icon {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
         .badge {
             display: inline-block;
             background: var(--accent-color);
@@ -93,10 +127,10 @@
             color: #666;
         }
 
-        /* スマホ対応 */
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .container { margin-top: -20px; }
+            .sns-grid { grid-template-columns: 1fr 1fr; } /* スマホでは2列 */
         }
     </style>
 </head>
@@ -115,6 +149,29 @@
         <div style="margin-bottom: 10px;">
             <span class="badge">Update</span> <small>2026/03/04</small>
             <p style="color: var(--text-color); margin-top: 5px;">サーバーアップデート実施！新ワールドの追加とイベントを予定しています。</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <h3>Community List / コミュニティ</h3>
+        <p style="margin-bottom: 15px;">最新情報のチェックや交流はこちらから！</p>
+        <div class="sns-grid">
+            <a href="#" target="_blank" class="sns-button" style="border-bottom: 3px solid var(--discord-color);">
+                <span class="sns-icon">💬</span>
+                <span>Discord</span>
+            </a>
+            <a href="#" target="_blank" class="sns-button" style="border-bottom: 3px solid var(--x-color);">
+                <span class="sns-icon">📱</span>
+                <span>X (Twitter)</span>
+            </a>
+            <a href="#" target="_blank" class="sns-button" style="border-bottom: 3px solid #FF0000;">
+                <span class="sns-icon">📺</span>
+                <span>YouTube</span>
+            </a>
+            <a href="#" target="_blank" class="sns-button" style="border-bottom: 3px solid #E4405F;">
+                <span class="sns-icon">📸</span>
+                <span>Instagram</span>
+            </a>
         </div>
     </div>
 
