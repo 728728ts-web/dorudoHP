@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script>
+if (!location.search.includes("v=")) {
+  location.replace(location.pathname + "?v=" + Date.now());
+}
+</script>
 <iframe src="page.html?v=1"></iframe>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
