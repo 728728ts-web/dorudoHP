@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script>
+const params = new URLSearchParams(location.search);
+const token = params.get("token");
+const saved = sessionStorage.getItem("auth");
+
+// 🔒 厳密チェック
+if (!token || !saved || token !== saved) {
+  sessionStorage.removeItem("auth");
+  location.replace("/");
+} else {
+  // 🔥 一度通ったらトークン破棄（再利用防止）
+  sessionStorage.removeItem("auth");
+
+  // URLからtoken消す（見た目＆安全性UP）
+  history.replaceState(null, "", "/page.html");
+}
+</script>
 
 
 <meta charset="UTF-8">
