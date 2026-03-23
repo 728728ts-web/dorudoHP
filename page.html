@@ -2,9 +2,11 @@
 <html lang="ja">
 <head>
 <script>
-const ref = document.referrer;
+const params = new URLSearchParams(location.search);
+const token = params.get("token");
+const saved = sessionStorage.getItem("auth");
 
-if (!ref.includes("dorudo.pages.dev")) {
+if (!token || token !== saved) {
   location.href = "/";
 }
 </script>
