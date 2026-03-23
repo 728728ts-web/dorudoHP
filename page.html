@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<script>
-const params = new URLSearchParams(location.search);
-const token = params.get("token");
-const saved = sessionStorage.getItem("auth");
 
-if (!token || token !== saved) {
-  location.href = "/";
-}
-</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
