@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script>
+const ref = document.referrer;
+
+if (!ref.includes("dorudo.pages.dev")) {
+  location.href = "/";
+}
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
