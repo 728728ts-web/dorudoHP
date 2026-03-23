@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script>
+const token = Math.random().toString(36).substring(2);
+sessionStorage.setItem("auth", token);
+
+location.href = "https://dorudo.pages.dev/page.html?token=" + token;
+</script>
 <meta charset="UTF-8">
 <title>Redirect</title>
 
