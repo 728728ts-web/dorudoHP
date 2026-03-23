@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<script>
-const token = Math.random().toString(36).substring(2);
-sessionStorage.setItem("auth", token);
-
-location.href = "https://dorudo.pages.dev/page.html?token=" + token;
-</script>
 <meta charset="UTF-8">
 <title>Redirect</title>
 
@@ -23,13 +17,18 @@ body{
 </style>
 
 <script>
+// 🔒 トークン生成＆保存
+const token = Math.random().toString(36).substring(2);
+sessionStorage.setItem("auth", token);
+
+// ⏳ カウントダウン
 let time = 5;
 
 function countdown(){
   document.getElementById("count").textContent = time;
 
   if(time === 0){
-    location.href = "https://dorudo.pages.dev/page.html";
+    location.href = "https://dorudo.pages.dev/page.html?token=" + token;
   } else {
     time--;
     setTimeout(countdown, 1000);
@@ -49,15 +48,12 @@ window.onload = countdown;
 <script src="https://adm.shinobi.jp/s/a13447e7cc5fb17d27abae7e3109f162"></script>
 <script src="https://adm.shinobi.jp/s/3d3d1919ac5fec51a08e3b1ce938765c"></script>
 
-<h1>広告の観覧にご協力ください</h1></h1>
+<h1>広告の観覧にご協力ください</h1>
 <h1>ただいま仮ページとなっております。</h1>
 
 <p>
   <span id="count">5</span> 秒後に自動で移動します
 </p>
-
-<p>すぐ移動したい場合はこちら👇</p>
-<a href="https://dorudo.pages.dev/page.html">こちら</a>
 
 <!-- admax -->
 <script src="https://adm.shinobi.jp/s/664a900a64c98e166c14b8751a3f48d4"></script>
